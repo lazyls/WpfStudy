@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WpfApplication2"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    Title="MainWindow" Height="500" Width="300">
+    <Window.Resources>
+        <Style TargetType="MenuItem">
+            <Style.Triggers>
+                <Trigger Property="MenuItem.IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Red"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <x:Array x:Key="arr" Type="local:Employee">
+            <local:Employee No="5" FirstName="A5" LastName="B5"></local:Employee>
+            <local:Employee No="6" FirstName="A6" LastName="B6"></local:Employee>
+            <local:Employee No="7" FirstName="A7" LastName="B7"></local:Employee>
+            <local:Employee No="1" FirstName="A1" LastName="B1"></local:Employee>
+            <local:Employee No="2" FirstName="A2" LastName="B2"></local:Employee>
+            <local:Employee No="3" FirstName="A3" LastName="B3"></local:Employee>
+            <local:Employee No="4" FirstName="A4" LastName="B4"></local:Employee>
+            <local:Employee No="8" FirstName="A8" LastName="B8"></local:Employee>
+            <local:Employee No="9" FirstName="A9" LastName="B9"></local:Employee>
+        </x:Array>
+        <x:Array x:Key="arr1" Type="sys:String">
+            <sys:String>S1</sys:String>
+            <sys:String>S2</sys:String>
+            <sys:String>S3</sys:String>
+            <sys:String>S4</sys:String>
+            <sys:String>S5</sys:String>
+            <sys:String>S6</sys:String>
+            <sys:String>S7</sys:String>
+        </x:Array>
+    </Window.Resources>
+    <StackPanel>
+        <TreeView>
+            <TreeViewItem Header ="Employee1">
+                <TreeViewItem.Items>
+                    <Button>Jesper</Button>
+                    <Button>Aaberg</Button>
+                    <Button>12345</Button>
+                </TreeViewItem.Items>
+            </TreeViewItem>
+            <TreeViewItem Header="Employee2">
+                <Button>Dominik</Button>
+                <Button>Paiha</Button>
+                <Button>98765</Button>
+                <TreeViewItem Header ="Employee1">
+                    <Button>Jesper</Button>
+                    <Button>Aaberg</Button>
+                    <Button>12345</Button>
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
+        <Button Click="ButtonBase_OnClick">Bu_tton</Button>
+    </StackPanel>
+</Window>
